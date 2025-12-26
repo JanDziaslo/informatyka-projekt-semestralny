@@ -1,6 +1,6 @@
 import random
 import time
-
+print("Link do repozytorium: https://github.com/JanDziaslo/informatyka-projekt-semestralny"+"\n")
 def generowanie():
     with open('liczby.txt', 'w') as f:
         for _ in range(9999):
@@ -171,7 +171,7 @@ def kubelkowe():
             f.write(str(liczba) + '\n')
 
 def numerki():
-    print("sortowanie babelkowe (1), sortowanie przez wstawianie (2), sortowanie przez wybieranie (3), sortowanie szybkie (4), sortowanie kubelkowe (5), wszytkie sortowania (6), zakoncz program(0)")
+    print("sortowanie babelkowe (1)"+"\n""sortowanie przez wstawianie (2)"+"\n""sortowanie przez wybieranie (3)"+"\n""sortowanie szybkie (4)"+"\n""sortowanie kubelkowe (5)"+"\n""wszytkie sortowania (6)"+"\n""zakoncz program (0)"+"\n")
     odp = int(input("podaj metode sortowania w postaci liczby: " ))
     return odp
 
@@ -231,4 +231,3 @@ def test(odp):
 
 generowanie()
 test(numerki())
-
