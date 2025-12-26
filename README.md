@@ -7,7 +7,7 @@
 - [x] szybkie sortowanie
 - [x] kubelkowe
 - [x] ostateczna walidacja
-- [ ] test przez osobe trzecia
+- [x] test przez osobe trzecia
 ## Tresc z moodla
 
 Dany jest plik dane.txt z 9999 liczbami z zakresu -100000 do 100000.
