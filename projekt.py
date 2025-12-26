@@ -1,11 +1,11 @@
 import random
 import time
 
-with open('liczby.txt', 'w') as f:
-    for _ in range(9999):
-        liczba = random.randint(-100000, 100000)
-        f.write(str(liczba) + '\n')
-print("plik z liczbami zostal wygenrowany")
+def generowanie():
+    with open('liczby.txt', 'w') as f:
+        for _ in range(9999):
+            liczba = random.randint(-100000, 100000)
+            f.write(str(liczba) + '\n')
 
 def bobelkowe():
     tablica = []
@@ -58,7 +58,6 @@ def wstawianie():
         f.write(f'czas wykonywania: {czas_wykonania:.6f} s\n')
         for liczba in tablica:
             f.write(str(liczba) + '\n')
-
 
 def wybieranie():
     tablica = []
@@ -133,19 +132,103 @@ def szybkie():
         for liczba in tablica:
             f.write(str(liczba) + '\n')
 
+def kubelkowe():
 
-print("sortowanie babelkowe")
-bobelkowe()
-print("sortowanie babelkowe zakonczylo sie")
+    tablica = []
 
-print("sortowanie przez wstawianie")
-wstawianie()
-print("sortowanie przez wstawianie zakonczylo sie")
+    with open('liczby.txt', 'r') as f:
+        for line in f:
+            tablica.append(int(line.strip()))
 
-print("sortowanie przez wybieranie")
-wybieranie()
-print("sortowanie przez wybieranie zakonczylo sie")
+    n = len(tablica)
 
-print("sortowanie szybkie")
-szybkie()
-print("sortowanie szybkie zakonczylo sie")
+    start_time = time.time()
+
+    mini = min(tablica)
+    maxi = max(tablica)
+
+    liczniki = [0] * (maxi - mini + 1)
+
+    for i in range(n):
+        liczniki[tablica[i] - mini] += 1
+
+    j = 0
+
+    for i in range(len(liczniki)):
+        while liczniki[i] > 0:
+            tablica[j] = i + mini
+            liczniki[i] -= 1
+            j += 1
+
+    end_time = time.time()
+    czas_wykonania = end_time - start_time
+
+
+    with open('kublkowe.txt', 'w') as f:
+        f.write('zlozonosc obliczeniowa: O(n²)' + '\n')
+        f.write(f'czas wykonywania: {czas_wykonania:.6f} s\n')
+        for liczba in tablica:
+            f.write(str(liczba) + '\n')
+
+def numerki():
+    print("sortowanie babelkowe (1), sortowanie przez wstawianie (2), sortowanie przez wybieranie (3), sortowanie szybkie (4), sortowanie kubelkowe (5), wszytkie sortowania (6), zakoncz program(0)")
+    odp = int(input("podaj metode sortowania w postaci liczby: " ))
+    return odp
+
+def test(odp):
+    if(odp==1):
+        print("sortowanie babelkowe"+"\n")
+        bobelkowe()
+        print("sortowanie babelkowe zakonczylo sie"+"\n")
+        test(numerki())
+    elif(odp==2):
+        print("sortowanie przez wstawianie"+"\n")
+        wstawianie()
+        print("sortowanie przez wstawianie zakonczylo sie"+"\n")
+        test(numerki())
+    elif(odp==3):
+        print("sortowanie przez wybieranie"+"\n")
+        wybieranie()
+        print("sortowanie przez wybieranie zakonczylo sie"+"\n")
+        test(numerki())
+    elif(odp==4):
+        print("sortowanie szybkie"+"\n")
+        szybkie()
+        print("sortowanie szybkie zakonczylo sie"+"\n")
+        test(numerki())
+    elif(odp==5):
+        print("sortowanie kubelkowe"+"\n")
+        kubelkowe()
+        print("sortowanie kubelkowe zakonczylo sie"+"\n")
+        test(numerki())
+    elif (odp==6):
+        print("sortowanie babelkowe" +"\n")
+        bobelkowe()
+        print("sortowanie babelkowe zakonczylo sie"+"\n")
+
+        print("sortowanie przez wstawianie"+"\n")
+        wstawianie()
+        print("sortowanie przez wstawianie zakonczylo sie"+"\n")
+
+        print("sortowanie przez wybieranie")
+        wybieranie()
+        print("sortowanie przez wybieranie zakonczylo sie"+"\n")
+
+        print("sortowanie szybkie"+"\n")
+        szybkie()
+        print("sortowanie szybkie zakonczylo sie"+"\n")
+
+        print("sortowanie kubelkowe")
+        kubelkowe()
+        print("sortowanie kubelkowe zakonczylo sie"+"\n")
+        test(numerki())
+    elif (odp==0):
+        print("koniec sortowania"+"\n")
+    else:
+        print("nieprawidlowa wartosc"+"\n")
+        print ("sprobuj ponownie :)"+"\n")
+        test(numerki())
+
+generowanie()
+test(numerki())
+
