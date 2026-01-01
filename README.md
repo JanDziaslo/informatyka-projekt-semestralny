@@ -22,8 +22,6 @@ Program napisz z podziałem na funkcje.
 
 Nie zapomnij o walidacji programu.
 
-Przypomnienie: Zapis i odczyt z pliku
-
 ## poznane funkcje sortowania
 - babelkowe
 - wstawianie
