@@ -1,4 +1,6 @@
 # informatyka-projekt-semestralny
+> [!WARNING]
+> Testowane na EndeavourOS
 
 ## Do zrobienia
 - [x] babelkowe

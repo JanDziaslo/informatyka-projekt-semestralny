@@ -27,7 +27,7 @@ def bobelkowe():
 
 
     with open('babelkowe.txt', 'w') as f:
-        f.write('zlozonosc obliczeniowa: O(n²)'+ '\n')
+        f.write('zlozonosc obliczeniowa: O(n^2)'+ '\n')
         f.write(f'czas wykonywania: {czas_wykonania:.6f} s\n')
         for liczba in tablica:
             f.write(str(liczba) + '\n')
@@ -54,7 +54,7 @@ def wstawianie():
     czas_wykonania = end_time - start_time
 
     with open('wstawianie.txt', 'w') as f:
-        f.write('zlozonosc obliczeniowa: O(n²)' + '\n')
+        f.write('zlozonosc obliczeniowa: O(n^2)' + '\n')
         f.write(f'czas wykonywania: {czas_wykonania:.6f} s\n')
         for liczba in tablica:
             f.write(str(liczba) + '\n')
@@ -82,7 +82,7 @@ def wybieranie():
     czas_wykonania = end_time - start_time
 
     with open('wybieranie.txt', 'w') as f:
-        f.write('zlozonosc obliczeniowa: O(n²)' + '\n')
+        f.write('zlozonosc obliczeniowa: O(n^2)' + '\n')
         f.write(f'czas wykonywania: {czas_wykonania:.6f} s\n')
         for liczba in tablica:
             f.write(str(liczba) + '\n')
@@ -165,7 +165,7 @@ def kubelkowe():
 
 
     with open('kublkowe.txt', 'w') as f:
-        f.write('zlozonosc obliczeniowa: O(n²)' + '\n')
+        f.write('zlozonosc obliczeniowa: O(n^2)' + '\n')
         f.write(f'czas wykonywania: {czas_wykonania:.6f} s\n')
         for liczba in tablica:
             f.write(str(liczba) + '\n')
